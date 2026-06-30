@@ -89,11 +89,11 @@ export default function OrderDetails() {
 
         <aside className="space-y-4">
           <div className="card-base p-6">
-            <Row label="Subtotal" value={`$${Number(order.subtotal).toFixed(2)}`} />
-            <Row label="Shipping" value={`$${Number(order.shippingFee).toFixed(2)}`} />
-            <Row label="Discount" value={`-$${Number(order.discount).toFixed(2)}`} />
+            <Row label="Subtotal" value={`NPR ${Number(order.subtotal).toFixed(2)}`} />
+            <Row label="Shipping" value={`NPR ${Number(order.shippingFee).toFixed(2)}`} />
+            <Row label="Discount" value={`-NPR ${Number(order.discount).toFixed(2)}`} />
             <div className="h-px bg-border my-3" />
-            <Row label="Total" value={`$${Number(order.total).toFixed(2)}`} bold />
+            <Row label="Total" value={`NPR ${Number(order.total).toFixed(2)}`} bold />
             <p className="text-xs text-muted mt-3">
               Payment: {order.payment?.status || "PENDING"} ({order.payment?.method || "—"})
             </p>

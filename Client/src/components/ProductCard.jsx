@@ -53,8 +53,8 @@ export default function ProductCard({ product, index = 0 }) {
         </Link>
         <div className="mt-auto pt-3 flex items-end justify-between gap-2">
           <div>
-            <p className="font-semibold text-dark">${price.toFixed(2)}</p>
-            {original && <p className="text-xs text-muted line-through">${original.toFixed(2)}</p>}
+            <p className="font-semibold text-dark">NPR {price.toFixed(2)}</p>
+            {original && <p className="text-xs text-muted line-through">NPR {original.toFixed(2)}</p>}
           </div>
           <button
             onClick={() => addItem(product.id, 1)}

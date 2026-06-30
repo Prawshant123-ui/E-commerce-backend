@@ -141,15 +141,15 @@ export default function Checkout() {
               <div key={it.id} className="flex items-center gap-2 text-sm">
                 <span className="text-muted">{it.quantity}×</span>
                 <span className="flex-1 truncate text-dark">{it.product.name}</span>
-                <span className="text-dark">${(Number(it.product.discountPrice ?? it.product.price) * it.quantity).toFixed(2)}</span>
+                <span className="text-dark">NPR {(Number(it.product.discountPrice ?? it.product.price) * it.quantity).toFixed(2)}</span>
               </div>
             ))}
           </div>
           <div className="h-px bg-border my-3" />
-          <Row label="Subtotal" value={`$${subtotal.toFixed(2)}`} />
-          <Row label="Shipping" value={shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`} />
+          <Row label="Subtotal" value={`NPR ${subtotal.toFixed(2)}`} />
+          <Row label="Shipping" value={shipping === 0 ? "Free" : `NPR ${shipping.toFixed(2)}`} />
           <div className="h-px bg-border my-3" />
-          <Row label="Total" value={`$${total.toFixed(2)}`} bold />
+          <Row label="Total" value={`NPR ${total.toFixed(2)}`} bold />
           <button onClick={place} disabled={placing || !selected} className="btn-primary w-full mt-5">{placing ? "Placing order…" : "Place order"}</button>
           <Link to="/cart" className="btn-ghost w-full text-center block mt-2">Back to cart</Link>
         </aside>

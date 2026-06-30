@@ -83,8 +83,8 @@ export default function ProductDetails() {
           {product.brand && <p className="text-sm text-muted mt-1">by {product.brand}</p>}
 
           <div className="flex items-baseline gap-3 mt-5">
-            <p className="text-3xl font-display text-dark">${price.toFixed(2)}</p>
-            {original && <p className="text-lg text-muted line-through">${original.toFixed(2)}</p>}
+            <p className="text-3xl font-display text-dark">NPR {price.toFixed(2)}</p>
+            {original && <p className="text-lg text-muted line-through">NPR {original.toFixed(2)}</p>}
             {original && <span className="chip !bg-primary !text-white">Save {Math.round(((original - price) / original) * 100)}%</span>}
           </div>
 

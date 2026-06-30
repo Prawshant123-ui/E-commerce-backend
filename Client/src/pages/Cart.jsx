@@ -57,7 +57,7 @@ export default function Cart() {
                 </Link>
                 <div className="flex-1 min-w-0">
                   <Link to={`/product/${p.slug}`} className="font-medium text-dark hover:text-primary line-clamp-2">{p.name}</Link>
-                  <p className="text-sm text-muted mt-1">${price.toFixed(2)} each</p>
+                  <p className="text-sm text-muted mt-1">NPR {price.toFixed(2)} each</p>
                   <div className="mt-3 flex items-center gap-2">
                     <div className="flex items-center border border-border rounded-full">
                       <button onClick={() => updateItem(it.id, Math.max(1, it.quantity - 1))} className="p-2 hover:bg-section rounded-l-full"><FiMinus /></button>
@@ -67,7 +67,7 @@ export default function Cart() {
                     <button onClick={() => removeItem(it.id)} className="btn-ghost !p-2 ml-auto text-primary"><FiTrash2 /></button>
                   </div>
                 </div>
-                <p className="font-display text-lg text-dark">Rs{(price * it.quantity).toFixed(2)}</p>
+                <p className="font-display text-lg text-dark">NPR {(price * it.quantity).toFixed(2)}</p>
               </motion.div>
             );
           })}
@@ -76,12 +76,12 @@ export default function Cart() {
 
         <aside className="card-base p-6 h-fit sticky top-24">
           <h3 className="text-lg mb-4">Order summary</h3>
-          <Row label="Subtotal" value={`$${subtotal.toFixed(2)}`} />
-          <Row label="Shipping" value={shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`} />
+          <Row label="Subtotal" value={`NPR ${subtotal.toFixed(2)}`} />
+          <Row label="Shipping" value={shipping === 0 ? "Free" : `NPR ${shipping.toFixed(2)}`} />
           <div className="h-px bg-border my-3" />
-          <Row label="Total" value={`$${total.toFixed(2)}`} bold />
+          <Row label="Total" value={`NPR ${total.toFixed(2)}`} bold />
           <button onClick={() => nav("/checkout")} className="btn-primary w-full mt-5">Proceed to checkout</button>
-          <p className="text-xs text-muted mt-3 text-center">Free shipping on orders over Rs 50.</p>
+          <p className="text-xs text-muted mt-3 text-center">Free shipping on orders over NPR 50.</p>
         </aside>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { FiSearch, FiShoppingBag, FiHeart, FiUser, FiMenu, FiX, FiLogOut, FiSett
 import { useAuth } from "../context/AuthContext.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { useWishlist } from "../context/WishlistContext.jsx";
+import logo from "../assets/logo.png";
 
 const nav = [
   { to: "/",        label: "Home" },
@@ -36,12 +37,13 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 backdrop-blur-md bg-bg/85 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center gap-4">
 
-        {/* Logo */}
-     <Link
+        
+   {/* Logo */}
+<Link
   to="/"
   className="flex items-center gap-2 font-display text-2xl font-semibold text-dark"
 >
-  <span className="text-primary">✦</span>
+  <img src={logo} alt="Vastra" className="h-15 w-auto" />
   <span>Vastra</span>
 </Link>
 
@@ -62,13 +64,13 @@ export default function Navbar() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search products..."
-              className="input-base pl-11"
+              className="input-base pl-11 py-1.5 text-sm"
             />
           </div>
         </form>
 
         {/* Icons */}
-        <div className="flex items-center gap-1 ml-auto lg:ml-3">
+        <div className="flex items-center gap-1  lg:ml-2 pr-1">
           <Link to="/wishlist" className="relative btn-ghost p-2.5" aria-label="Wishlist">
             <FiHeart className="text-xl" />
             {wishCount > 0 && <Badge>{wishCount}</Badge>}

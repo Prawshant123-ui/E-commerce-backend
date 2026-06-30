@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FiInstagram, FiTwitter, FiFacebook, FiMail } from "react-icons/fi";
+import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
   to="/"
   className="flex items-center gap-2 font-display text-2xl font-semibold text-dark"
 >
-  <span className="text-primary">✦</span>
+  <img src={logo} alt="Vastra" className="h-15 w-auto" />
   <span>Vastra</span>
 </Link>
           <p className="mt-3 text-sm text-body">
